@@ -23,3 +23,14 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+// var login = require("../page/loginPage");
+// var homepage = require("../page/homePage");
+// Cypress.Commands.add("login", (username, password) => {
+//   cy.visit("https://staging-wct.azurewebsites.net");
+//   cy.get(homepage.loginInBtn).click();
+//   cy.get('[placeholder="Enter email or phone number"]').type(
+//     "mhxdec23@drowblock.com"
+//   );
+//   cy.get(login.inputPW).type("Admin@1234", { log: false });
+//   cy.get(login.loginBtn).contains("Login").click();
+// });

@@ -4,14 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "my-server -p 3030",
+    "cy:run": "cypress run",
+    "test": "start-server-and-test start http://localhost:3030 cy:run"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "cypress": "^12.1.0"
+    "mocha": "^10.2.0"
   },
   "devDependencies": {
+    "cypress": "^12.3.0",
     "cypress-plugin-tab": "^1.0.5"
   }
 }

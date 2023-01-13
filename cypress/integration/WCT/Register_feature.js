@@ -8,6 +8,52 @@ describe("Register feature", () => {
     cy.get(homepage.registerBtn).click();
     cy.wrap("css-xi606m");
   });
+  it.only('test', () => {
+    cy.visit("https://temp-mail.io/en");
+        cy.get(
+          "#__layout > div > header > div.menu > button:nth-child(4) > span.header-btn__text"
+        ).click();
+        cy.get('[id="name"]').type("mhxjan132");
+        cy.get('[id="domains-list"]').contains("drowblock.com").click();
+        cy.contains("Get it!").click();
+        cy.wait(10000);
+        cy.get(".email-list").should("be.visible");
+      });
+  });
+  it("Verify it can register a WCT account successfully", () => {
+    cy.get('[data-testid="firstName"]').type("Xuan");
+    cy.get('[data-testid="lastName"]').type("Mai");
+    cy.get(".selected-flag").click();
+    cy.get(
+      "#dialog-root > div.css-ngigpd > div > div.css-rk6200 > div > div.css-3dqpno > form > div:nth-child(3) > div > div.flag-dropdown.open.btn-dropdown > ul"
+    )
+      .contains(".country-name", "Vietnam")
+      .click();
+    cy.get(".form-control").type("914673335");
+    cy.get('[placeholder="Enter email"]').type("mhxjan132@drowblock.com");
+    cy.get('[placeholder="Enter password"]').type("Admin@1234");
+    cy.get(".css-rk6200 > :nth-child(1)").click(170, 75);
+    cy.get('[name="reTypePassword"]').type("Admin@1234");
+    cy.get(".css-2n5ts8").click();
+    cy.contains(registerpage.registerBtn, "Register").click();
+    cy.get(".css-41ljug")
+      .then(() => {
+        cy.get(".css-41ljug")
+          .should("be.visible")
+          .and("contain", "Check your email");
+      })
+      .then(() => {
+        cy.visit("https://temp-mail.io/en");
+        cy.get(
+          "#__layout > div > header > div.menu > button:nth-child(4) > span.header-btn__text"
+        ).click();
+        cy.get('[id="name"]').type("mhxjan132");
+        cy.get('[id="domains-list"]').contains("drowblock.com").click();
+        cy.contains("Get it!").click();
+        cy.wait(10000);
+        cy.get(".email-list").should("be.visible");
+      });
+  });
   it("Verify first name & last name of Register Max length: 50", () => {
     cy.get('[data-testid="firstName"]').type(
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry"
@@ -40,8 +86,8 @@ describe("Register feature", () => {
     )
       .contains(".country-name", "Vietnam")
       .click();
-    cy.get(".form-control").type("1231231244");
-    cy.get('[placeholder="Enter email"]').type("mhxtest1244@mail.com");
+    cy.get(".form-control").type("1231231245");
+    cy.get('[placeholder="Enter email"]').type("mhxtest1245@mail.com");
     cy.get('[placeholder="Enter password"]').type("Admin@1234");
     cy.get(".css-rk6200 > :nth-child(1)").click(170, 75);
     cy.get('[name="reTypePassword"]').type("Admin@1234");
