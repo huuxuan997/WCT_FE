@@ -1,11 +1,8 @@
 describe("test", () => {
   it("t", () => {
     cy.visit("https://temp-mail.io/en");
-    cy.get('[data-original-title="Change email"]')
-      .click("center")
-      .click()
-      .click();
-    cy.get('[id="name"]').type("mhxdec211");
+    cy.get('[data-original-title="Change email"]').click("center").click();
+    cy.get('[id="name"]').type("mhxdec23");
     cy.get(".domains-list__selected-domain").click();
     cy.get('[id="domains-list"]').contains("drowblock.com").click();
     cy.contains("Get it!").click();

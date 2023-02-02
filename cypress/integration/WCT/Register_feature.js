@@ -8,18 +8,6 @@ describe("Register feature", () => {
     cy.get(homepage.registerBtn).click();
     cy.wrap("css-xi606m");
   });
-  it.only('test', () => {
-    cy.visit("https://temp-mail.io/en");
-        cy.get(
-          "#__layout > div > header > div.menu > button:nth-child(4) > span.header-btn__text"
-        ).click();
-        cy.get('[id="name"]').type("mhxjan132");
-        cy.get('[id="domains-list"]').contains("drowblock.com").click();
-        cy.contains("Get it!").click();
-        cy.wait(10000);
-        cy.get(".email-list").should("be.visible");
-      });
-  });
   it("Verify it can register a WCT account successfully", () => {
     cy.get('[data-testid="firstName"]').type("Xuan");
     cy.get('[data-testid="lastName"]').type("Mai");
@@ -216,55 +204,55 @@ describe("Register feature", () => {
   });
   it("Verify that the system displays the content when the user enters the wrong password", () => {
     cy.get('[placeholder="Enter password"]').focus();
-    cy.get('[aria-label="validate-item-0"]').should(
+    cy.contains("Be between 8-16 characters long").should(
       "have.css",
       "color",
-      "rgb(163, 163, 163)"
+      "rgb(85, 85, 85)"
     );
-    cy.get('[aria-label="validate-item-1"]').should(
+    cy.contains("Include both lower and upper case characters").should(
       "have.css",
       "color",
-      "rgb(163, 163, 163)"
+      "rgb(85, 85, 85)"
     );
-    cy.get('[aria-label="validate-item-2"]').should(
+    cy.contains("Include a number").should(
       "have.css",
       "color",
-      "rgb(163, 163, 163)"
+      "rgb(85, 85, 85)"
     );
-    cy.get('[aria-label="validate-item-3"]').should(
+    cy.contains("Include a special character").should(
       "have.css",
       "color",
-      "rgb(163, 163, 163)"
+      "rgb(85, 85, 85)"
     );
-    cy.get('[aria-label="validate-item-4"]').should(
+    cy.contains("Not have space").should(
       "have.css",
       "color",
-      "rgb(163, 163, 163)"
+      "rgb(85, 85, 85)"
     );
     cy.get('[placeholder="Enter password"]')
       .type("Bb")
       .then(() => {
-        cy.get('[aria-label="validate-item-0"]').should(
+        cy.contains("Be between 8-16 characters long").should(
           "have.css",
           "color",
           "rgb(239, 68, 68)"
         );
-        cy.get('[aria-label="validate-item-1"]').should(
+        cy.contains("Include both lower and upper case characters").should(
           "have.css",
           "color",
           "rgb(34, 197, 94)"
         );
-        cy.get('[aria-label="validate-item-2"]').should(
+        cy.contains("Include a number").should(
           "have.css",
           "color",
           "rgb(239, 68, 68)"
         );
-        cy.get('[aria-label="validate-item-3"]').should(
+        cy.contains("Include a special character").should(
           "have.css",
           "color",
           "rgb(239, 68, 68)"
         );
-        cy.get('[aria-label="validate-item-4"]').should(
+        cy.contains("Not have space").should(
           "have.css",
           "color",
           "rgb(34, 197, 94)"
@@ -273,27 +261,27 @@ describe("Register feature", () => {
     cy.get('[placeholder="Enter password"]')
       .type("1")
       .then(() => {
-        cy.get('[aria-label="validate-item-0"]').should(
+        cy.contains("Be between 8-16 characters long").should(
           "have.css",
           "color",
           "rgb(239, 68, 68)"
         );
-        cy.get('[aria-label="validate-item-1"]').should(
+        cy.contains("Include both lower and upper case characters").should(
           "have.css",
           "color",
           "rgb(34, 197, 94)"
         );
-        cy.get('[aria-label="validate-item-2"]').should(
+        cy.contains("Include a number").should(
           "have.css",
           "color",
           "rgb(34, 197, 94)"
         );
-        cy.get('[aria-label="validate-item-3"]').should(
+        cy.contains("Include a special character").should(
           "have.css",
           "color",
           "rgb(239, 68, 68)"
         );
-        cy.get('[aria-label="validate-item-4"]').should(
+        cy.contains("Not have space").should(
           "have.css",
           "color",
           "rgb(34, 197, 94)"
@@ -302,27 +290,27 @@ describe("Register feature", () => {
     cy.get('[placeholder="Enter password"]')
       .type("@")
       .then(() => {
-        cy.get('[aria-label="validate-item-0"]').should(
+        cy.contains("Be between 8-16 characters long").should(
           "have.css",
           "color",
           "rgb(239, 68, 68)"
         );
-        cy.get('[aria-label="validate-item-1"]').should(
+        cy.contains("Include both lower and upper case characters").should(
           "have.css",
           "color",
           "rgb(34, 197, 94)"
         );
-        cy.get('[aria-label="validate-item-2"]').should(
+        cy.contains("Include a number").should(
           "have.css",
           "color",
           "rgb(34, 197, 94)"
         );
-        cy.get('[aria-label="validate-item-3"]').should(
+        cy.contains("Include a special character").should(
           "have.css",
           "color",
           "rgb(34, 197, 94)"
         );
-        cy.get('[aria-label="validate-item-4"]').should(
+        cy.contains("Not have space").should(
           "have.css",
           "color",
           "rgb(34, 197, 94)"
@@ -331,27 +319,27 @@ describe("Register feature", () => {
     cy.get('[placeholder="Enter password"]')
       .type("123123")
       .then(() => {
-        cy.get('[aria-label="validate-item-0"]').should(
+        cy.contains("Be between 8-16 characters long").should(
           "have.css",
           "color",
           "rgb(34, 197, 94)"
         );
-        cy.get('[aria-label="validate-item-1"]').should(
+        cy.contains("Include both lower and upper case characters").should(
           "have.css",
           "color",
           "rgb(34, 197, 94)"
         );
-        cy.get('[aria-label="validate-item-2"]').should(
+        cy.contains("Include a number").should(
           "have.css",
           "color",
           "rgb(34, 197, 94)"
         );
-        cy.get('[aria-label="validate-item-3"]').should(
+        cy.contains("Include a special character").should(
           "have.css",
           "color",
           "rgb(34, 197, 94)"
         );
-        cy.get('[aria-label="validate-item-4"]').should(
+        cy.contains("Not have space").should(
           "have.css",
           "color",
           "rgb(34, 197, 94)"
@@ -377,6 +365,4 @@ describe("Register feature", () => {
       .should("be.visible")
       .and("contain", "Password does not match, please re-type!");
   });
-  // check UX/UI
-  it.skip("Verify It should be same as the Design Figma", () => {});
 });
