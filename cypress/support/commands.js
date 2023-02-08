@@ -34,3 +34,4 @@
 //   cy.get(login.inputPW).type("Admin@1234", { log: false });
 //   cy.get(login.loginBtn).contains("Login").click();
 // });
+import "cypress-mailosaur";

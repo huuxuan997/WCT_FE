@@ -6,15 +6,17 @@
   "scripts": {
     "start": "my-server -p 3030",
     "cy:run": "cypress run",
-    "test": "start-server-and-test start http://localhost:3030 cy:run"
+    "test": "npx cypress run --record --key=d343b1cc-bd96-417a-9bb5-794b0d3d7e88"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "libphonenumber-js": "^1.10.19",
     "mocha": "^10.2.0"
   },
   "devDependencies": {
     "cypress": "^12.5.0",
+    "cypress-mailosaur": "^2.13.0",
     "cypress-plugin-tab": "^1.0.5"
   }
 }

@@ -31,7 +31,7 @@ describe("Forgot password feature", () => {
     cy.contains("Send").click();
     cy.contains("Email is not already exists").should("be.visible");
   });
-  it.only("Verify It will navigate to the Check your email screen if is correct", () => {
+  it("Verify It will navigate to the Check your email screen if is correct", () => {
     cy.get('[placeholder="Enter email"]').type("mhxdec23@drowblock.com");
     cy.contains("Send").click();
     cy.contains("Check your email").should("be.visible");
